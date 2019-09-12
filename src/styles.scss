@@ -1,0 +1,69 @@
+.calendar {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(7, 100px);
+  grid-gap: 1px;
+  max-width: 750px;
+
+  div {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    transition-duration: 0.5s;
+
+    &:hover {
+      background-color: pink;
+      transform: translate(0, -20px);
+      cursor: pointer;
+    }
+  }
+}
+
+.calendar-tue div:first-child {
+  grid-column-start: 2;
+}
+
+.calendar-wed div:first-child {
+  grid-column-start: 3;
+}
+
+.calendar-thu div:first-child {
+  grid-column-start: 4;
+}
+
+.calendar-fri div:first-child {
+  grid-column-start: 5;
+}
+
+.calendar-sat div:first-child {
+  grid-column-start: 6;
+}
+
+.calendar-sun div:first-child {
+  grid-column-start: 7;
+}
+
+.calendar-30 div:nth-child(30) ~ div {
+  display: none;
+}
+
+.calendar-29 div:nth-child(29) ~ div {
+  display: none;
+}
+
+.calendar-28 div:nth-child(28) ~ div {
+  display: none;
+}
+
+@for $i from 1 through 31 {
+  .calendar > div:nth-child(#{$i})::after {
+    content: "#{$i}";
+  }
+}
+
