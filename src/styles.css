@@ -23,42 +23,6 @@
   cursor: pointer;
 }
 
-.calendar-tue div:first-child {
-  grid-column-start: 2;
-}
-
-.calendar-wed div:first-child {
-  grid-column-start: 3;
-}
-
-.calendar-thu div:first-child {
-  grid-column-start: 4;
-}
-
-.calendar-fri div:first-child {
-  grid-column-start: 5;
-}
-
-.calendar-sat div:first-child {
-  grid-column-start: 6;
-}
-
-.calendar-sun div:first-child {
-  grid-column-start: 7;
-}
-
-.calendar-30 div:nth-child(30) ~ div {
-  display: none;
-}
-
-.calendar-29 div:nth-child(29) ~ div {
-  display: none;
-}
-
-.calendar-28 div:nth-child(28) ~ div {
-  display: none;
-}
-
 .calendar > div:nth-child(1)::after {
   content: "1";
 }
@@ -181,6 +145,54 @@
 
 .calendar > div:nth-child(31)::after {
   content: "31";
+}
+
+.calendar-28 div:nth-child(28) ~ div {
+  display: none;
+}
+
+.calendar-29 div:nth-child(29) ~ div {
+  display: none;
+}
+
+.calendar-30 div:nth-child(30) ~ div {
+  display: none;
+}
+
+.calendar-28 div:nth-child(28) ~ div {
+  display: none;
+}
+
+.calendar-29 div:nth-child(29) ~ div {
+  display: none;
+}
+
+.calendar-30 div:nth-child(30) ~ div {
+  display: none;
+}
+
+.calendar-tue div:first-child {
+  grid-column-start: 2;
+}
+
+.calendar-wed div:first-child {
+  grid-column-start: 3;
+}
+
+.calendar-thu div:first-child {
+  grid-column-start: 4;
+}
+
+.calendar-fri div:first-child {
+  grid-column-start: 5;
+}
+
+.calendar-sat div:first-child {
+  grid-column-start: 6;
+}
+
+.calendar-sun div:first-child {
+  grid-column-start: 7;
 }
 
 /*# sourceMappingURL=styles.css.map */

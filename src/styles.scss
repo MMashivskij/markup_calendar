@@ -1,3 +1,5 @@
+$days: tue, wed, thu, fri, sat, sun;
+
 .calendar {
   margin: auto;
   display: grid;
@@ -25,45 +27,26 @@
   }
 }
 
-.calendar-tue div:first-child {
-  grid-column-start: 2;
-}
-
-.calendar-wed div:first-child {
-  grid-column-start: 3;
-}
-
-.calendar-thu div:first-child {
-  grid-column-start: 4;
-}
-
-.calendar-fri div:first-child {
-  grid-column-start: 5;
-}
-
-.calendar-sat div:first-child {
-  grid-column-start: 6;
-}
-
-.calendar-sun div:first-child {
-  grid-column-start: 7;
-}
-
-.calendar-30 div:nth-child(30) ~ div {
-  display: none;
-}
-
-.calendar-29 div:nth-child(29) ~ div {
-  display: none;
-}
-
-.calendar-28 div:nth-child(28) ~ div {
-  display: none;
-}
-
 @for $i from 1 through 31 {
   .calendar > div:nth-child(#{$i})::after {
     content: "#{$i}";
   }
 }
 
+@for $i from 28 through 30 {
+  .calendar-#{$i} div:nth-child(#{$i}) ~ div {
+    display: none;
+  }
+}
+
+@for $i from 28 through 30 {
+  .calendar-#{$i} div:nth-child(#{$i}) ~ div {
+    display: none;
+  }
+}
+
+@for $i from 1 through length($days) {
+  .calendar-#{nth($days, $i)} div:first-child {
+    grid-column-start: #{$i+1};
+  }
+}
